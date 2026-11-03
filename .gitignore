@@ -1,0 +1,26 @@
+# robertn's cluster-render files — never redistribute from here (GPL, get from MGU Store)
+cluster_render_client.js
+**/cluster_render_client.js
+cluster-render@*.tgz
+app-privacy*.tgz
+
+# build / runtime artifacts
+*.tool.tgz
+/tmp/
+node_modules/
+*.log
+preview*.png
+prev-*.png
+*.rgb
+
+# never commit anything that could be sensitive
+*id_rsa*
+*.pem
+*.key
+enrollments/
+**/enrollments/
+*.enrollment
+
+# OS cruft
+.DS_Store
+Thumbs.db

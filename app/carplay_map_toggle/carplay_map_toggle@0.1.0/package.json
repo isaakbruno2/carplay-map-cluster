@@ -1,0 +1,43 @@
+{
+  "name": "carplay_map_toggle",
+  "version": "0.1.0",
+  "description": "Toggle ON/OFF for mirroring the CarPlay centre screen onto the instrument cluster, driven from the iDrive HMI",
+  "private": false,
+  "main": "javascript/runner.js",
+  "oapAppSettings": {
+    "maxDiskUsage": 26214400,
+    "cpuLimit": 50,
+    "memoryThresholdKB": 153600,
+    "priority": "PRIO_MEDIUM",
+    "visibility": "FOREGROUND",
+    "latencyClass": "FOREGROUND",
+    "loggingId": "CMTG",
+    "userLoginRequired": false,
+    "backgroundPriority": 150,
+    "someipManifest": "manifest.json"
+  },
+  "files": [
+    "config",
+    "rhmiData",
+    "package.json",
+    "npm-shrinkwrap.json",
+    "permissions.json",
+    "javascript",
+    "manifest.json"
+  ],
+  "dependencies": {
+    "oap-sdk": "24.10.2"
+  },
+  "engines": {
+    "node": ">=8.7.0"
+  },
+  "keywords": [
+    "node",
+    "BMW",
+    "Online",
+    "ConnectedDrive"
+  ],
+  "author": "Isaak",
+  "license": "GPL-3.0-or-later",
+  "mguLocalOnly": true
+}

@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: MPL-2.0
+# Copyright (C) 2026 — produtor "CarPlay no cluster" (idrive7 / BMW G20)
+[Unit]
+Description=carplay-map: espelha o mapa do CarPlay no cluster (alimenta o cluster-render)
+RequiresMountsFor=/var/opt
+# O produtor conecta no socket do cluster-render (que o ativa por socket) e usa o
+# compositor winston (captura) e o vsomeipd (gate do CarPlay). Ordena depois deles;
+# o cliente do cluster-render e o gate reconectam sozinhos se ainda nao subiram.
+Wants=cluster-render.socket
+After=cluster-render.socket winston.service vsomeipd.service local-fs.target
+
+[Service]
+# root: a captura usa o socket wayland-0 (dono root) e o socket de controle e
+# chowneado para o grupo tm_oap_app pelo proprio produtor.
+User=root
+Environment=WAYLAND_DISPLAY=wayland-0 XDG_RUNTIME_DIR=/run/wayland PATH=/usr/bin:/bin
+# --gate-initial menu: no boot (sem CarPlay na frente) nao espelha nada ate o
+# CarPlay vir para a frente (evento PROJECTED). --fps 6, modo video (padrao).
+ExecStart=/usr/bin/node /var/opt/carplay-map/current/carplay-map-cluster.js --fps 6 --gate-initial menu
+Restart=on-failure
+# No boot o cluster-render/winston podem ainda nao estar prontos; 5 s mantem as
+# retentativas longe do limite de start do systemd.
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

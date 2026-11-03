@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "id": "carplay_map_toggle",
+  "version": "0.1.0",
+  "tree": "carplay_map_toggle@0.1.0",
+  "modules": [
+    "src/app.js",
+    "src/control.js"
+  ],
+  "sdk": [
+    "oap-sdk/src/core/OnlineApp.js",
+    "oap-sdk/src/logging/logging"
+  ]
+}

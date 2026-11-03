@@ -1,0 +1,22 @@
+This repository is multi-licensed.
+
+1) Our code — the producer (producer/carplay-map-cluster.js) and the in-car app
+   (app/carplay_map_toggle/**) — is licensed under the
+
+       Mozilla Public License, version 2.0 (MPL-2.0)
+       https://www.mozilla.org/en-US/MPL/2.0/
+
+   Each of our source files carries an `SPDX-License-Identifier: MPL-2.0` header.
+
+2) This project depends on `cluster-render` by Robert Nisipeanu
+   (https://github.com/robertnisipeanu/idrive-apps), which is
+   GPL-3.0-or-later. `cluster-render` and its `cluster_render_client.js` are
+   NOT included in this repository — install them from MGU Store. Any file you
+   add that is derived from `cluster-render` remains under its GPL-3.0-or-later
+   license and its original copyright (Copyright (C) Robert Nisipeanu).
+
+3) No BMW software is included or redistributed here. This project only runs on
+   a unit you own and control, mirroring content that is already on your screen.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. Modifying a
+vehicle's software is at your own risk.

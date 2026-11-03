@@ -1,0 +1,43 @@
+{
+  "id": "carplay-map",
+  "kind": "tool",
+  "version": "0.2.0",
+  "title": "CarPlay no cluster (produtor)",
+  "description": "Captura o mapa do CarPlay da central e alimenta o cluster-render; ligado/desligado pelo app Mapa no Cluster",
+  "files": [
+    {
+      "path": "carplay-map-cluster.js",
+      "mode": "0755",
+      "sha256": "f4f92f5f2bd3b1127018a3189575847f6acf27c739cefc7b8304fd18daa47dcc"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "mode": "0644",
+      "sha256": "b01a4506e7c297e299793e4820ccac96acbda215f92486fa15a165a3e587683e"
+    }
+  ],
+  "units": [
+    {
+      "name": "carplay-map.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "carplay-map.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "carplay-map"
+  ],
+  "restart": [
+    "carplay-map.service"
+  ],
+  "requires": {
+    "mgu-deploy": "0.6.3",
+    "cluster-render": "0.2.0"
+  },
+  "mguHmi": [
+    "ID7"
+  ]
+}
