@@ -1,5 +1,6 @@
 # Keep Unix line endings — these run on the car's Linux unit (shell/JS/JSON/units).
 * text=auto eol=lf
 *.png binary
+*.webp binary
 *.tgz binary
 *.bin binary

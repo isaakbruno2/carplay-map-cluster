@@ -6,6 +6,10 @@ cluster** of a BMW iDrive7 MGU, on CarPlay builds that the
 e.g. CarPlay **`0.20.20`**, firmware `G_20w28.3`, MainApp 7.1.2, `carplay` sha
 `8ae226…`. **No patch, no firmware update, no modified BMW binaries.**
 
+![Waze map mirrored onto the BMW instrument cluster while CarPlay runs on the central screen](docs/demo.webp)
+
+*CarPlay's Waze map running on the instrument cluster (left) while CarPlay's Dashboard is on the central screen (right) — BMW G20, CarPlay 0.20.20.*
+
 > It's a pragmatic *mirror*, not a second video stream. Read **"What it is (and isn't)"**
 > and **"Limitations"** before expecting it to behave like the real thing.
 
